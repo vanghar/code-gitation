@@ -30,7 +30,7 @@ class Solution {
                     baseIndex += numRows - 1;
                     // This is the tricky part. I iterate one zigzag segment at a time. Based on whether I'm going down
                     // a vertical line or up a diagonal one (I probably should have called the boolean isVertical), I
-                    // adjust the number of hops from the last vertex to find the index.
+                    // adjust the number of hops from the vertex at "baseIndex" to find the next index for the row.
                     index = goingDown ? baseIndex + rowNum : baseIndex + numRows - 1 - rowNum;
                 }
             }
