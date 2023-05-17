@@ -28,6 +28,9 @@ class Solution {
                     indexRow.add(index);
                     goingDown = !goingDown;
                     baseIndex += numRows - 1;
+                    // This is the tricky part. I iterate one zigzag segment at a time. Based on whether I'm going down
+                    // a vertical line or up a diagonal one (I probably should have called the boolean isVertical), I
+                    // adjust the number of hops from the last vertex to find the index.
                     index = goingDown ? baseIndex + rowNum : baseIndex + numRows - 1 - rowNum;
                 }
             }
@@ -35,7 +38,8 @@ class Solution {
             indexMatrix.add(indexRow);
         }
 
-        // To be honest, in my first submission I did string concatenation instead of using StringBuilder.
+        // To be honest, in my first submission I did string concatenation instead of using StringBuilder. Otherwise, I
+        // didn't try to optimize my answer.
         StringBuilder result = new StringBuilder();
         for (List<Integer> row : indexMatrix) {
             for (int index : row) {
