@@ -35,6 +35,7 @@ class Solution {
             indexMatrix.add(indexRow);
         }
 
+        // To be honest, in my first submission I did string concatenation instead of using StringBuilder.
         StringBuilder result = new StringBuilder();
         for (List<Integer> row : indexMatrix) {
             for (int index : row) {
